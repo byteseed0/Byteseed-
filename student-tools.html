@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Attendance, CGPA and percentage calculators for students.">
+  <title>Student Tools — ByteSeed</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.png" alt="ByteSeed logo"><span>Byte<span>Seed</span></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html#tools">Tools</a><a href="cv-builder.html">CV Builder</a><a href="templates.html">Templates</a>
+    <a href="student-tools.html">Student Tools</a><a href="index.html#resources">Resources</a><a href="index.html#dreamy">Dreamy Designs</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero small-hero">
+  <div class="hero-content">
+    <p class="eyebrow">STUDENT TOOLS</p>
+    <h1>Calculators for<br><span>everyday student life.</span></h1>
+    <p class="hero-text">Attendance, CGPA and percentage — the three calculations every student needs, in one place.</p>
+  </div>
+</section>
+
+<section class="section alt" id="attendance">
+  <div class="section-heading"><p class="eyebrow">STUDENT TOOLS</p><h2>Attendance Calculator</h2><p>Check if you're meeting your attendance target.</p></div>
+  <div class="tool-panel narrow">
+    <label>Total classes held<input type="number" id="attTotal" min="0" placeholder="e.g. 90"></label>
+    <label>Classes attended<input type="number" id="attAttended" min="0" placeholder="e.g. 70"></label>
+    <label>Required attendance % <input type="number" id="attTarget" min="1" max="100" value="75"></label>
+    <button class="btn" id="attCalc">Calculate</button>
+    <div class="result-box" id="attResult">Your result will appear here.</div>
+  </div>
+</section>
+
+<section class="section" id="cgpa">
+  <div class="section-heading"><p class="eyebrow">STUDENT TOOLS</p><h2>CGPA Calculator</h2><p>Add each subject's credit and grade point, then calculate.</p></div>
+  <div class="tool-panel">
+    <div id="cgpaRows" class="cgpa-rows">
+      <div class="cgpa-row"><input type="number" placeholder="Credits" class="cgpaCredit" min="0"><input type="number" placeholder="Grade point (0-10)" class="cgpaPoint" min="0" max="10" step="0.1"><button type="button" class="remove-row">×</button></div>
+      <div class="cgpa-row"><input type="number" placeholder="Credits" class="cgpaCredit" min="0"><input type="number" placeholder="Grade point (0-10)" class="cgpaPoint" min="0" max="10" step="0.1"><button type="button" class="remove-row">×</button></div>
+    </div>
+    <div class="btn-row">
+      <button type="button" class="outline-btn" id="cgpaAddRow">Add Subject</button>
+      <button type="button" class="btn" id="cgpaCalc">Calculate CGPA</button>
+    </div>
+    <div class="result-box" id="cgpaResult">Your result will appear here.</div>
+  </div>
+</section>
+
+<section class="section alt" id="percentage">
+  <div class="section-heading"><p class="eyebrow">STUDENT TOOLS</p><h2>Percentage Calculator</h2><p>Calculate marks percentage, or convert CGPA to an estimated percentage.</p></div>
+  <div class="tool-panel narrow">
+    <label>Marks obtained<input type="number" id="pctObtained" placeholder="e.g. 430"></label>
+    <label>Total marks<input type="number" id="pctTotal" placeholder="e.g. 500"></label>
+    <button class="btn" id="pctCalc">Calculate Percentage</button>
+    <div class="result-box" id="pctResult">Your result will appear here.</div>
+
+    <div class="divider-label">— OR CONVERT CGPA —</div>
+
+    <label>CGPA (0–10)<input type="number" id="pctCgpa" step="0.01" min="0" max="10" placeholder="e.g. 8.5"></label>
+    <button class="outline-btn" id="cgpaToPctCalc">Convert to Percentage</button>
+    <div class="result-box" id="cgpaToPctResult">Your result will appear here.</div>
+  </div>
+</section>
+</main>
+<footer><div class="footer-brand"><img class="brand-logo footer-logo" src="assets/logo.png" alt="ByteSeed logo"> ByteSeed</div><div class="footer-links"><a href="index.html#tools">Tools</a><a href="cv-builder.html">CV</a><a href="templates.html">Templates</a><a href="student-tools.html">Student Tools</a><a href="index.html#resources">Resources</a></div><p>© <span id="year"></span> ByteSeed. Built to grow.</p></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
