@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Format, minify and validate JSON data.">
+  <title>JSON Formatter — ByteSeed</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.png" alt="ByteSeed logo"><span>Byte<span>Seed</span></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html#tools">Tools</a><a href="cv-builder.html">CV Builder</a><a href="templates.html">Templates</a>
+    <a href="student-tools.html">Student Tools</a><a href="index.html#resources">Resources</a><a href="index.html#dreamy">Dreamy Designs</a>
+  </nav>
+</header>
+
+<main>
+<section class="section alt" id="json-formatter">
+  <div class="section-heading"><p class="eyebrow">DEVELOPER TOOLS</p><h2>JSON Formatter</h2><p>Format, minify and validate JSON.</p></div>
+  <div class="tool-panel">
+    <textarea id="jsonInput" rows="9" placeholder='Paste JSON here, e.g. {"name":"ByteSeed"}'></textarea>
+    <div class="btn-row">
+      <button class="btn" id="jsonFormat">Format</button>
+      <button class="outline-btn" id="jsonMinify">Minify</button>
+      <button class="outline-btn" id="jsonValidate">Validate</button>
+      <button class="outline-btn copy-btn" data-copy="jsonOutput">Copy Result</button>
+    </div>
+    <p class="json-status" id="jsonStatus"></p>
+    <textarea id="jsonOutput" rows="9" placeholder="Result will appear here..." readonly></textarea>
+  </div>
+</section>
+</main>
+<footer><div class="footer-brand"><img class="brand-logo footer-logo" src="assets/logo.png" alt="ByteSeed logo"> ByteSeed</div><div class="footer-links"><a href="index.html#tools">Tools</a><a href="cv-builder.html">CV</a><a href="templates.html">Templates</a><a href="student-tools.html">Student Tools</a><a href="index.html#resources">Resources</a></div><p>© <span id="year"></span> ByteSeed. Built to grow.</p></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

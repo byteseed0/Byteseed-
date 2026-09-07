@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Count words, characters, lines and sentences instantly.">
+  <title>Text Counter — ByteSeed</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.png" alt="ByteSeed logo"><span>Byte<span>Seed</span></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html#tools">Tools</a><a href="cv-builder.html">CV Builder</a><a href="templates.html">Templates</a>
+    <a href="student-tools.html">Student Tools</a><a href="index.html#resources">Resources</a><a href="index.html#dreamy">Dreamy Designs</a>
+  </nav>
+</header>
+
+<main>
+<section class="section alt" id="text-counter">
+  <div class="section-heading"><p class="eyebrow">TEXT TOOLS</p><h2>Text Counter</h2><p>Paste or type text to see live stats.</p></div>
+  <div class="tool-panel">
+    <textarea id="tcInput" rows="10" placeholder="Start typing or paste your text here..."></textarea>
+    <div class="stat-grid">
+      <div class="stat-card"><strong id="tcWords">0</strong><span>Words</span></div>
+      <div class="stat-card"><strong id="tcChars">0</strong><span>Characters</span></div>
+      <div class="stat-card"><strong id="tcCharsNoSpace">0</strong><span>Characters (no spaces)</span></div>
+      <div class="stat-card"><strong id="tcLines">0</strong><span>Lines</span></div>
+      <div class="stat-card"><strong id="tcSentences">0</strong><span>Sentences</span></div>
+      <div class="stat-card"><strong id="tcParagraphs">0</strong><span>Paragraphs</span></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="footer-brand"><img class="brand-logo footer-logo" src="assets/logo.png" alt="ByteSeed logo"> ByteSeed</div><div class="footer-links"><a href="index.html#tools">Tools</a><a href="cv-builder.html">CV</a><a href="templates.html">Templates</a><a href="student-tools.html">Student Tools</a><a href="index.html#resources">Resources</a></div><p>© <span id="year"></span> ByteSeed. Built to grow.</p></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>

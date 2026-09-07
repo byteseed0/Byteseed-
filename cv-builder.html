@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build a professional CV in your browser, with six templates and an optional profile photo.">
+  <title>CV Builder — ByteSeed</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="index.html"><img class="brand-logo" src="assets/logo.png" alt="ByteSeed logo"><span>Byte<span>Seed</span></span></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <nav id="nav">
+    <a href="index.html#tools">Tools</a><a href="cv-builder.html">CV Builder</a><a href="templates.html">Templates</a>
+    <a href="student-tools.html">Student Tools</a><a href="index.html#resources">Resources</a><a href="index.html#dreamy">Dreamy Designs</a>
+  </nav>
+</header>
+
+<main>
+<section class="section alt" id="cv-tools">
+  <div class="section-heading"><p class="eyebrow">CV CENTER</p><h2>CV & Resume Builder</h2><p>Create a professional CV directly in your browser.</p></div>
+
+  <div class="builder-layout">
+    <form class="cv-form" id="cvForm">
+      <div class="form-title"><span class="badge">CV</span><div><h3>CV Builder</h3><p>Your information stays in this browser.</p></div></div>
+
+      <div class="form-section" id="templateSection"><h4>Template</h4>
+        <div class="template-select-row">
+          <button type="button" class="tpl-swatch" data-tpl="classic">Classic<small>No photo</small></button>
+          <button type="button" class="tpl-swatch" data-tpl="modern">Modern<small>Photo</small></button>
+          <button type="button" class="tpl-swatch" data-tpl="minimal">Minimal<small>No photo</small></button>
+          <button type="button" class="tpl-swatch" data-tpl="corporate">Corporate<small>Photo</small></button>
+          <button type="button" class="tpl-swatch" data-tpl="creative">Creative<small>Photo</small></button>
+          <button type="button" class="tpl-swatch" data-tpl="ats">ATS-Friendly<small>No photo</small></button>
+        </div>
+        <label class="check" style="margin-top:16px"><input type="checkbox" id="includePhoto"> Add a profile photo</label>
+        <label id="photoUploadLabel">Choose photo from gallery<input type="file" id="photoInput" accept="image/*"></label>
+        <div class="photo-preview-row" id="photoPreviewRow"><img id="photoPreviewThumb" alt="Selected photo"><span>No photo selected yet</span></div>
+      </div>
+
+      <div class="form-section"><h4>Personal Details</h4>
+        <label>Full name<input id="name" placeholder="Your full name"></label>
+        <label>Professional title<input id="title" placeholder="e.g. BCA Student | Web Developer"></label>
+        <label>Email<input id="email" type="email" placeholder="you@example.com"></label>
+        <label>Phone<input id="phone" placeholder="+91 98765 43210"></label>
+        <label>Location<input id="location" placeholder="City, State, Country"></label>
+        <label>Portfolio / LinkedIn<input id="website" placeholder="linkedin.com/in/yourname"></label>
+        <label>Professional summary<textarea id="summary" rows="4" placeholder="Write 2-4 sentences about yourself..."></textarea></label>
+      </div>
+
+      <div class="form-section"><h4>Education</h4>
+        <label>Degree / Course<input id="education" placeholder="BCA - Computer Applications"></label>
+        <label>College / Institution<input id="college" placeholder="College name"></label>
+        <label>Year / Period<input id="eduYear" placeholder="2024 - 2027"></label>
+      </div>
+
+      <div class="form-section"><h4>Experience</h4>
+        <label>Role / Position<input id="experienceRole" placeholder="Intern / Freelance Developer"></label>
+        <label>Company / Organization<input id="experienceCompany" placeholder="Company name"></label>
+        <label>Period<input id="experiencePeriod" placeholder="2026 - Present"></label>
+        <label>Details<textarea id="experienceDetails" rows="4" placeholder="Describe your work, achievements or responsibilities..."></textarea></label>
+      </div>
+
+      <div class="form-section"><h4>Skills</h4>
+        <label>Skills<input id="skills" placeholder="HTML, CSS, JavaScript, Python, Cloud Computing"></label>
+        <small>Separate skills with commas.</small>
+      </div>
+
+      <div class="form-section"><h4>Certifications</h4>
+        <label>Certifications<textarea id="certifications" rows="3" placeholder="Certificate name - Issuer&#10;Certificate name - Issuer"></textarea></label>
+      </div>
+
+      <div class="form-section"><h4>Projects</h4>
+        <label>Project name<input id="projectName" placeholder="ByteSeed"></label>
+        <label>Project details<textarea id="projectDetails" rows="3" placeholder="What did you build? What technologies did you use?"></textarea></label>
+      </div>
+
+      <div class="form-actions"><button type="button" class="outline-btn" id="clearBtn">Clear</button><button type="button" class="btn" id="printBtn">Print / Save PDF</button></div>
+    </form>
+
+    <div class="preview-wrap">
+      <div class="preview-toolbar"><strong>Live Preview</strong><span>Updates automatically</span></div>
+      <article class="cv-paper tpl-classic" id="cvPreview">
+        <header class="cv-head" id="cvHead">
+          <div class="cv-photo" id="pPhotoWrap"><img id="pPhoto" alt="Profile photo"></div>
+          <div class="cv-head-text">
+            <h1 id="pName">Your Name</h1>
+            <p id="pTitle">Professional Title</p>
+            <div class="contact" id="pContact">Email . Phone . Location</div>
+          </div>
+        </header>
+        <div class="cv-body">
+          <section class="cv-block" id="summaryBlock"><h2>PROFILE</h2><p id="pSummary">Your professional summary will appear here.</p></section>
+          <section class="cv-block" id="experienceBlock"><h2>EXPERIENCE</h2><div class="cv-item"><div class="item-top"><strong id="pExpRole">Your Role</strong><span id="pExpPeriod">Period</span></div><b id="pExpCompany">Company</b><p id="pExpDetails">Your experience details.</p></div></section>
+          <section class="cv-block" id="educationBlock"><h2>EDUCATION</h2><div class="cv-item"><div class="item-top"><strong id="pEducation">Degree / Course</strong><span id="pEduYear">Period</span></div><b id="pCollege">Institution</b></div></section>
+          <section class="cv-block" id="skillsBlock"><h2>SKILLS</h2><div class="skill-list" id="pSkills"><span>Example Skill</span></div></section>
+          <section class="cv-block" id="certBlock"><h2>CERTIFICATIONS</h2><div id="pCertifications">Certificate details</div></section>
+          <section class="cv-block" id="projectBlock"><h2>PROJECT</h2><div class="cv-item"><strong id="pProjectName">Project Name</strong><p id="pProjectDetails">Project details.</p></div></section>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="footer-brand"><img class="brand-logo footer-logo" src="assets/logo.png" alt="ByteSeed logo"> ByteSeed</div><div class="footer-links"><a href="index.html#tools">Tools</a><a href="cv-builder.html">CV</a><a href="templates.html">Templates</a><a href="student-tools.html">Student Tools</a><a href="index.html#resources">Resources</a></div><p>© <span id="year"></span> ByteSeed. Built to grow.</p></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
